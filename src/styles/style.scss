@@ -78,6 +78,11 @@ body {
                 input {
                     display: none;
                 }
+
+                label {
+                    width: 55px;
+                    height: 60px;
+                }
             }
         }
 
@@ -204,20 +209,61 @@ body {
                     justify-content: center;
                     align-items: center;
                 }
+
+                .cross {
+                    display: none;
+                }
+
+                .header__menu:has(input:checked)>label.lines {
+                    display: none;
+                }
+
+                .header__menu:has(input:checked)>label.cross {
+                    display: flex;
+                }
             }
 
-            /*.banner__menubuttons {
+            .banner__header:has(input:checked)~.banner__menubuttons {
+                left: 0px;
+            }
+
+            .banner__menubuttons {
                 width: 100%;
                 max-width: 320px;
-                min-height: 574px;
+                min-height: 514px;
+                background-image: url("./../essets/Banner_2img.png"), url("./../essets/mobile_banner.png");
+                background-size: 100% 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: flex-start;
                 position: absolute;
                 left: -320px;
-                display: none;
-            }*/
+                transition: 0.5s;
+
+                a {
+                    width: 100%;
+
+                    input {
+                        width: 280px;
+                        height: 63px;
+                        padding: 0;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        color: white;
+                        background-color: rgba(0, 0, 0, 0);
+                        border: none;
+                        text-align: left;
+                    }
+
+                    input:active {
+                        color: #E71414;
+                        border-bottom: 3px solid #E71414;
+                    }
+                }
+            }
 
             .banner__name {
                 font-size: 36px;
